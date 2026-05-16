@@ -1,0 +1,567 @@
+:root {
+    --primary: #9B5DE5;
+    --secondary: #F15BB5;
+    --background: #F8F5FF;
+    --card-bg: #FFFFFF;
+    --text-primary: #2D1E40;
+    --text-secondary: #7B6D8D;
+    --border: #ebe3ff;
+    --shadow: 0 10px 30px rgba(155, 93, 229, 0.10);
+    --success: #4CAF50;
+}
+
+/* 
+   BODY
+ */
+
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--background);
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    min-height: 100vh;
+}
+
+/* 
+   SIDEBAR
+ */
+
+.sidebar {
+    width: 270px;
+    background: linear-gradient(
+        180deg,
+        #9B5DE5,
+        #7b49ba
+    );
+
+    color: white;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+
+    padding: 30px 20px;
+
+    display: flex;
+    flex-direction: column;
+
+    box-shadow: 5px 0 20px rgba(0,0,0,0.08);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    font-size: 24px;
+    font-weight: 700;
+
+    margin-bottom: 45px;
+}
+
+.logo i {
+    font-size: 28px;
+}
+
+.sidebar-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.sidebar-menu a,
+.sidebar-menu button {
+    border: none;
+    background: transparent;
+
+    color: rgba(255,255,255,0.88);
+
+    text-decoration: none;
+
+    padding: 14px 18px;
+
+    border-radius: 16px;
+
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    font-size: 15px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+.sidebar-menu a:hover,
+.sidebar-menu button:hover,
+.sidebar-menu .active {
+    background: rgba(255,255,255,0.18);
+
+    color: white;
+
+    transform: translateX(4px);
+}
+
+/* 
+   MAIN CONTENT
+ */
+
+.main-content {
+    flex: 1;
+    margin-left: 270px;
+    padding: 35px;
+}
+
+/* 
+   TOPBAR
+ */
+
+.topbar {
+    margin-bottom: 35px;
+}
+
+.topbar h1 {
+    font-size: 34px;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
+.topbar p {
+    color: var(--text-secondary);
+    font-size: 15px;
+}
+
+/* 
+   TRACKER CARD
+ */
+
+.tracker-section {
+    margin-bottom: 35px;
+}
+
+.tracker-card {
+    background: white;
+
+    border-radius: 28px;
+
+    padding: 35px;
+
+    box-shadow: var(--shadow);
+}
+
+.tracker-card h2 {
+    color: var(--text-primary);
+    margin-bottom: 28px;
+}
+
+/* 
+   FORM
+ */
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: var(--text-primary);
+
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.form-group input[type="date"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+
+    padding: 15px 18px;
+
+    border-radius: 16px;
+
+    border: 2px solid transparent;
+
+    background: #f7f2ff;
+
+    font-family: inherit;
+    font-size: 15px;
+
+    transition: all 0.3s ease;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+
+    border-color: var(--primary);
+
+    background: white;
+
+    box-shadow: 0 0 0 4px rgba(155, 93, 229, 0.12);
+}
+
+/* 
+   MOOD GRID
+ */
+
+.mood-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+}
+
+.mood-btn {
+    border: none;
+
+    background: #f7f2ff;
+
+    border-radius: 20px;
+
+    padding: 18px 10px;
+
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 26px;
+
+    transition: all 0.3s ease;
+}
+
+.mood-btn span {
+    font-size: 14px;
+    color: var(--text-primary);
+}
+
+.mood-btn:hover {
+    transform: translateY(-5px);
+}
+
+.mood-btn.active {
+    background: linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    color: white;
+}
+
+.mood-btn.active span {
+    color: white;
+}
+
+/* 
+   SYMPTOMS
+ */
+
+.symptom-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.symptom-item {
+    background: #f7f2ff;
+
+    padding: 15px 18px;
+
+    border-radius: 16px;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+.symptom-item:hover {
+    transform: translateY(-3px);
+}
+
+.symptom-item input {
+    accent-color: var(--primary);
+}
+
+/* 
+   RADIO GROUP
+ */
+
+.radio-group {
+    display: flex;
+    gap: 25px;
+}
+
+.radio-group label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    cursor: pointer;
+}
+
+.radio-group input {
+    accent-color: var(--primary);
+}
+
+/* 
+   SAVE BUTTON
+ */
+
+.save-btn {
+    width: 100%;
+
+    border: none;
+
+    padding: 16px;
+
+    border-radius: 18px;
+
+    background: linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    color: white;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+
+    margin-top: 10px;
+}
+
+.save-btn:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 12px 25px rgba(155, 93, 229, 0.25);
+}
+
+/* 
+   RECENT LOGS
+ */
+
+.recent-tracks {
+    margin-bottom: 30px;
+}
+
+.section-header {
+    margin-bottom: 20px;
+}
+
+.section-header h2 {
+    color: var(--text-primary);
+}
+
+.recent-logs-container {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.log-card {
+    background: white;
+
+    border-radius: 22px;
+
+    padding: 22px;
+
+    box-shadow: var(--shadow);
+
+    transition: all 0.3s ease;
+}
+
+.log-card:hover {
+    transform: translateY(-4px);
+}
+
+.log-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 15px;
+}
+
+.log-top h3 {
+    color: var(--text-primary);
+    font-size: 18px;
+}
+
+.log-date {
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.log-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.log-tag {
+    background: rgba(155, 93, 229, 0.12);
+
+    color: var(--primary);
+
+    padding: 8px 14px;
+
+    border-radius: 30px;
+
+    font-size: 13px;
+    font-weight: 500;
+}
+
+/* 
+   EMPTY STATE
+ */
+
+.empty-state {
+    background: white;
+
+    border-radius: 24px;
+
+    padding: 40px;
+
+    text-align: center;
+
+    box-shadow: var(--shadow);
+}
+
+.empty-state i {
+    font-size: 40px;
+
+    color: var(--primary);
+
+    margin-bottom: 15px;
+}
+
+.empty-state p {
+    color: var(--text-secondary);
+}
+
+/* 
+   RESPONSIVE
+ */
+
+@media (max-width: 1200px) {
+
+    .mood-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .symptom-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+
+    .sidebar {
+        width: 85px;
+        padding: 25px 12px;
+    }
+
+    .logo span {
+        display: none;
+    }
+
+    .sidebar-menu a,
+    .sidebar-menu button {
+        justify-content: center;
+    }
+
+    .sidebar-menu a span,
+    .sidebar-menu button span {
+        display: none;
+    }
+
+    .main-content {
+        margin-left: 85px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .main-content {
+        padding: 25px 18px;
+    }
+
+    .tracker-card {
+        padding: 25px;
+    }
+
+    .mood-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .symptom-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .topbar h1 {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .sidebar {
+        display: none;
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+
+    .mood-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tracker-card {
+        padding: 22px;
+    }
+}
+
+/* 
+   ANIMATIONS
+ */
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.tracker-card,
+.log-card {
+    animation: fadeUp 0.5s ease;
+}

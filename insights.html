@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Insights | Period Tracker</title>
+
+    <!-- GOOGLE FONTS -->
+
+    <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- FONT AWESOME -->
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- CHART JS -->
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- CSS FILES -->
+
+    <link rel="stylesheet"
+        href="css/global.css">
+
+    <link rel="stylesheet"
+        href="css/insights.css">
+
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <i class="fa-solid fa-heart-circle-bolt"></i>
+
+            <span>Period Tracker</span>
+
+        </div>
+
+        <nav class="sidebar-menu">
+
+            <a href="dashboard.html">
+
+                <i class="fa-solid fa-table-columns"></i>
+
+                Dashboard
+
+            </a>
+
+            <a href="tracker.html">
+
+                <i class="fa-solid fa-calendar-check"></i>
+
+                Track Cycle
+
+            </a>
+
+            <a href="calendar.html">
+
+                <i class="fa-solid fa-calendar-days"></i>
+
+                Calendar
+
+            </a>
+
+            <a href="insights.html"
+                class="active">
+
+                <i class="fa-solid fa-chart-line"></i>
+
+                Insights
+
+            </a>
+
+            <a href="settings.html">
+
+                <i class="fa-solid fa-gear"></i>
+
+                Settings
+
+            </a>
+
+            <button id="logoutBtn">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                Logout
+
+            </button>
+
+        </nav>
+
+    </aside>
+
+    <!-- MAIN CONTENT -->
+
+    <main class="main-content">
+
+        <!-- TOPBAR -->
+
+        <header class="topbar">
+
+            <div>
+
+                <h1>Health Insights</h1>
+
+                <p>
+                    Analyze wellness trends and cycle data.
+                </p>
+
+            </div>
+
+        </header>
+
+        <!-- INSIGHT CARDS -->
+
+        <section class="insight-cards">
+
+            <div class="insight-card">
+
+                <h3>Total Mood Logs</h3>
+
+                <h2 id="totalMoodLogs">0</h2>
+
+            </div>
+
+            <div class="insight-card">
+
+                <h3>Total Symptom Logs</h3>
+
+                <h2 id="totalSymptomLogs">0</h2>
+
+            </div>
+
+            <div class="insight-card">
+
+                <h3>Cycle Length</h3>
+
+                <h2 id="cycleLengthDisplay">
+                    28 Days
+                </h2>
+
+            </div>
+
+            <div class="insight-card">
+
+                <h3>Most Common Mood</h3>
+
+                <h2 id="commonMood">
+                    -- 
+                </h2>
+
+            </div>
+
+        </section>
+
+        <!-- CHARTS SECTION -->
+
+        <section class="charts-section">
+
+            <!-- MOOD CHART -->
+
+            <div class="chart-card">
+
+                <div class="chart-header">
+
+                    <h2>Mood Frequency</h2>
+
+                </div>
+
+                <canvas id="moodChart"></canvas>
+
+            </div>
+
+            <!-- SYMPTOM CHART -->
+
+            <div class="chart-card">
+
+                <div class="chart-header">
+
+                    <h2>Symptom Trends</h2>
+
+                </div>
+
+                <canvas id="symptomChart"></canvas>
+
+            </div>
+
+        </section>
+
+        <!-- MONTHLY SUMMARY -->
+
+        <section class="summary-section">
+
+            <div class="summary-card">
+
+                <h2>Monthly Wellness Summary</h2>
+
+                <div id="summaryContainer">
+
+                    <div class="summary-item">
+
+                        <p>
+                            No data available yet.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- JAVASCRIPT FILES -->
+
+    <script src="js/storage.js"></script>
+
+    <script src="js/utils.js"></script>
+
+    <script src="js/insights.js"></script>
+
+</body>
+
+</html>

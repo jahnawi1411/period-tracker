@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Login | Period Tracker</title>
+
+  <!-- GLOBAL CSS -->
+  <link rel="stylesheet" href="css/global.css">
+
+  <!-- FONT AWESOME -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+  <!-- AUTH CONTAINER -->
+  <div class="auth-container">
+
+    <!-- LOGIN CARD -->
+    <div class="auth-card">
+
+      <!-- TITLE -->
+      <div class="auth-title">
+        <h1>Welcome Back 🌸</h1>
+        <p>Login to continue your wellness journey</p>
+      </div>
+
+      <!-- LOGIN FORM -->
+      <form id="loginForm">
+
+        <!-- EMAIL -->
+        <div class="input-group">
+          <label>Email Address</label>
+
+          <input
+            type="email"
+            id="email"
+            placeholder="Enter your email"
+          >
+        </div>
+
+        <!-- PASSWORD -->
+        <div class="input-group">
+          <label>Password</label>
+
+          <div style="position: relative;">
+
+            <input
+              type="password"
+              id="password"
+              placeholder="Enter your password"
+            >
+
+            <!-- TOGGLE PASSWORD -->
+            <i
+              class="fa-solid fa-eye"
+              id="togglePassword"
+              style="
+                position: absolute;
+                right: 18px;
+                top: 50%;
+                transform: translateY(-50%);
+                cursor: pointer;
+                color: #7B6D8D;
+              "
+            ></i>
+
+          </div>
+        </div>
+
+        <!-- ERROR MESSAGE -->
+        <p
+          id="loginError"
+          style="
+            color: red;
+            margin-bottom: 15px;
+            display: none;
+            font-size: 14px;
+          "
+        >
+          Invalid email or password
+        </p>
+
+        <!-- LOGIN BUTTON -->
+        <button
+          type="submit"
+          class="btn btn-primary"
+          style="width: 100%;"
+        >
+          Login
+        </button>
+
+      </form>
+
+      <!-- REGISTER LINK -->
+      <div class="text-center mt-20">
+
+        <p style="color: var(--text-secondary);">
+
+          Don't have an account?
+
+          <a
+            href="register.html"
+            style="
+              color: var(--primary-color);
+              font-weight: 600;
+            "
+          >
+            Register
+          </a>
+
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- STORAGE JS -->
+  <script src="js/storage.js"></script>
+
+  <!-- AUTH JS -->
+  <script src="js/auth.js"></script>
+
+</body>
+
+</html>

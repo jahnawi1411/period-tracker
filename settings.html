@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Settings | Period Tracker</title>
+
+    <!-- GOOGLE FONTS -->
+
+    <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- FONT AWESOME -->
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- CSS -->
+
+    <link rel="stylesheet"
+        href="css/global.css">
+
+    <link rel="stylesheet"
+        href="css/settings.css">
+
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <i class="fa-solid fa-heart-circle-bolt"></i>
+
+            <span>Period Tracker</span>
+
+        </div>
+
+        <nav class="sidebar-menu">
+
+            <a href="dashboard.html">
+
+                <i class="fa-solid fa-table-columns"></i>
+
+                Dashboard
+
+            </a>
+
+            <a href="tracker.html">
+
+                <i class="fa-solid fa-calendar-check"></i>
+
+                Track Cycle
+
+            </a>
+
+            <a href="calendar.html">
+
+                <i class="fa-solid fa-calendar-days"></i>
+
+                Calendar
+
+            </a>
+
+            <a href="insights.html">
+
+                <i class="fa-solid fa-chart-line"></i>
+
+                Insights
+
+            </a>
+
+            <a href="settings.html"
+                class="active">
+
+                <i class="fa-solid fa-gear"></i>
+
+                Settings
+
+            </a>
+
+            <button id="logoutBtn">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                Logout
+
+            </button>
+
+        </nav>
+
+    </aside>
+
+    <!-- MAIN CONTENT -->
+
+    <main class="main-content">
+
+        <!-- TOPBAR -->
+
+        <header class="topbar">
+
+            <div>
+
+                <h1>Settings</h1>
+
+                <p>
+                    Personalize and manage your account.
+                </p>
+
+            </div>
+
+        </header>
+
+        <!-- PROFILE SETTINGS -->
+
+        <section class="settings-section">
+
+            <div class="settings-card">
+
+                <h2>Profile Information</h2>
+
+                <form id="profileForm">
+
+                    <!-- NAME -->
+
+                    <div class="form-group">
+
+                        <label>Full Name</label>
+
+                        <input type="text"
+                            id="fullName"
+                            placeholder="Enter your name">
+
+                    </div>
+
+                    <!-- EMAIL -->
+
+                    <div class="form-group">
+
+                        <label>Email Address</label>
+
+                        <input type="email"
+                            id="email"
+                            placeholder="Enter your email">
+
+                    </div>
+
+                    <!-- AGE -->
+
+                    <div class="form-group">
+
+                        <label>Age</label>
+
+                        <input type="number"
+                            id="age"
+                            placeholder="Enter your age">
+
+                    </div>
+
+                    <!-- CYCLE LENGTH -->
+
+                    <div class="form-group">
+
+                        <label>Cycle Length</label>
+
+                        <input type="number"
+                            id="cycleLength"
+                            placeholder="Cycle length in days">
+
+                    </div>
+
+                    <!-- BUTTON -->
+
+                    <button type="submit"
+                        class="save-btn">
+
+                        Update Profile
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+        <!-- 
+             APP SETTINGS
+        = -->
+
+        <section class="settings-section">
+
+            <div class="settings-card">
+
+                <h2>Application Settings</h2>
+
+                <!-- DARK MODE -->
+
+                <div class="setting-item">
+
+                    <div>
+
+                        <h3>Dark Mode</h3>
+
+                        <p>
+                            Enable dark appearance mode.
+                        </p>
+
+                    </div>
+
+                    <label class="switch">
+
+                        <input type="checkbox"
+                            id="darkModeToggle">
+
+                        <span class="slider"></span>
+
+                    </label>
+
+                </div>
+
+                <!-- CLEAR HISTORY -->
+
+                <div class="setting-item">
+
+                    <div>
+
+                        <h3>Clear Wellness History</h3>
+
+                        <p>
+                            Remove all tracker records permanently.
+                        </p>
+
+                    </div>
+
+                    <button id="clearHistoryBtn"
+                        class="danger-btn">
+
+                        Clear Data
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- JAVASCRIPT FILES -->
+
+    <script src="js/storage.js"></script>
+
+    <script src="js/utils.js"></script>
+
+    <script src="js/settings.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,476 @@
+/* 
+   CALENDAR PAGE STYLES
+*/
+
+:root {
+    --primary: #9B5DE5;
+    --secondary: #F15BB5;
+    --background: #F8F5FF;
+    --card-bg: #FFFFFF;
+    --text-primary: #2D1E40;
+    --text-secondary: #7B6D8D;
+    --shadow: 0 10px 30px rgba(155, 93, 229, 0.10);
+    --border: #ece4ff;
+
+    --period-color: #ffb3d1;
+    --ovulation-color: #bb86fc;
+    --fertile-color: #ead9ff;
+    --today-color: #9B5DE5;
+}
+
+/* 
+   BODY
+*/
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: var(--background);
+    display: flex;
+    min-height: 100vh;
+}
+
+/* 
+   SIDEBAR
+*/
+
+.sidebar {
+    width: 270px;
+    background: linear-gradient(
+        180deg,
+        #9B5DE5,
+        #7b49ba
+    );
+
+    color: white;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+
+    padding: 30px 20px;
+
+    display: flex;
+    flex-direction: column;
+
+    box-shadow: 5px 0 20px rgba(0,0,0,0.08);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    font-size: 24px;
+    font-weight: 700;
+
+    margin-bottom: 45px;
+}
+
+.logo i {
+    font-size: 28px;
+}
+
+.sidebar-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.sidebar-menu a,
+.sidebar-menu button {
+    border: none;
+    background: transparent;
+
+    color: rgba(255,255,255,0.88);
+
+    text-decoration: none;
+
+    padding: 14px 18px;
+
+    border-radius: 16px;
+
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    font-size: 15px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+.sidebar-menu a:hover,
+.sidebar-menu button:hover,
+.sidebar-menu .active {
+    background: rgba(255,255,255,0.18);
+
+    color: white;
+
+    transform: translateX(4px);
+}
+
+/* 
+   MAIN CONTENT
+n-left: 270px;
+    padding: 35px;
+}
+
+/*
+   TOPBAR
+*/
+
+.topbar {
+    margin-bottom: 35px;
+}
+
+.topbar h1 {
+    font-size: 34px;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
+.topbar p {
+    color: var(--text-secondary);
+    font-size: 15px;
+}
+
+/*
+   CALENDAR CARD
+*/
+
+.calendar-card {
+    background: white;
+
+    border-radius: 28px;
+
+    padding: 30px;
+
+    box-shadow: var(--shadow);
+
+    margin-bottom: 35px;
+}
+
+/*
+   CALENDAR HEADER
+*/
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 30px;
+}
+
+.calendar-header h2 {
+    color: var(--text-primary);
+    font-size: 28px;
+}
+
+.calendar-header button {
+    width: 45px;
+    height: 45px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    background: rgba(155, 93, 229, 0.12);
+
+    color: var(--primary);
+
+    cursor: pointer;
+
+    font-size: 18px;
+
+    transition: all 0.3s ease;
+}
+
+.calendar-header button:hover {
+    background: var(--primary);
+    color: white;
+}
+
+/*
+   WEEKDAYS
+*/
+
+.weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+
+    margin-bottom: 15px;
+}
+
+.weekdays div {
+    text-align: center;
+
+    color: var(--text-secondary);
+
+    font-size: 14px;
+    font-weight: 600;
+
+    padding: 10px;
+}
+
+/*
+   CALENDAR GRID
+*/
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+
+    gap: 12px;
+}
+
+/*
+   DAY BOX
+*/
+
+.day-box {
+    min-height: 90px;
+
+    background: #faf7ff;
+
+    border-radius: 18px;
+
+    padding: 12px;
+
+    position: relative;
+
+    transition: all 0.3s ease;
+}
+
+.day-box:hover {
+    transform: translateY(-4px);
+}
+
+.day-number {
+    font-size: 15px;
+    font-weight: 600;
+
+    color: var(--text-primary);
+}
+
+/*
+   TODAY
+*/
+
+.today {
+    border: 2px solid var(--today-color);
+}
+
+/*
+   PERIOD DAY
+*/
+
+.period-day {
+    background: var(--period-color);
+}
+
+/*
+   OVULATION DAY
+*/
+
+.ovulation-day {
+    background: var(--ovulation-color);
+
+    color: white;
+}
+
+/*
+   FERTILE WINDOW
+*/
+
+.fertile-day {
+    background: var(--fertile-color);
+}
+
+/*
+   EMPTY DAY
+*/
+
+.empty-day {
+    background: transparent;
+    box-shadow: none;
+}
+
+/*
+   LEGEND
+*/
+
+.legend-card {
+    background: white;
+
+    border-radius: 28px;
+
+    padding: 30px;
+
+    box-shadow: var(--shadow);
+}
+
+.legend-card h2 {
+    margin-bottom: 22px;
+    color: var(--text-primary);
+}
+
+.legend-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.legend-color {
+    width: 22px;
+    height: 22px;
+
+    border-radius: 8px;
+}
+
+.legend-color.period {
+    background: var(--period-color);
+}
+
+.legend-color.ovulation {
+    background: var(--ovulation-color);
+}
+
+.legend-color.fertile {
+    background: var(--fertile-color);
+}
+
+.legend-color.today {
+    background: var(--today-color);
+}
+
+/*
+   RESPONSIVE DESIGN
+*/
+
+@media (max-width: 1100px) {
+
+    .legend-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+
+    .sidebar {
+        width: 85px;
+        padding: 25px 12px;
+    }
+
+    .logo span {
+        display: none;
+    }
+
+    .sidebar-menu a,
+    .sidebar-menu button {
+        justify-content: center;
+    }
+
+    .main-content {
+        margin-left: 85px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .main-content {
+        padding: 25px 18px;
+    }
+
+    .calendar-card,
+    .legend-card {
+        padding: 22px;
+    }
+
+    .calendar-grid {
+        gap: 8px;
+    }
+
+    .day-box {
+        min-height: 75px;
+        padding: 10px;
+    }
+
+    .topbar h1 {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .calendar-grid {
+        gap: 5px;
+    }
+
+    .day-box {
+        min-height: 60px;
+        border-radius: 12px;
+        padding: 8px;
+    }
+
+    .day-number {
+        font-size: 13px;
+    }
+
+    .legend-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .sidebar {
+        display: none;
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+
+    .calendar-header h2 {
+        font-size: 22px;
+    }
+
+    .calendar-header button {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/*
+   ANIMATIONS
+*/
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.calendar-card,
+.legend-card {
+    animation: fadeUp 0.5s ease;
+}

@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Track Cycle | Period Tracker</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/tracker.css">
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <i class="fa-solid fa-heart-circle-bolt"></i>
+            <span>Period Tracker</span>
+        </div>
+
+        <nav class="sidebar-menu">
+
+            <a href="dashboard.html">
+                <i class="fa-solid fa-table-columns"></i>
+                Dashboard
+            </a>
+
+            <a href="tracker.html" class="active">
+                <i class="fa-solid fa-calendar-check"></i>
+                Track Cycle
+            </a>
+
+            <a href="calendar.html">
+                <i class="fa-solid fa-calendar-days"></i>
+                Calendar
+            </a>
+
+            <a href="insights.html">
+                <i class="fa-solid fa-chart-line"></i>
+                Insights
+            </a>
+
+            <a href="settings.html">
+                <i class="fa-solid fa-gear"></i>
+                Settings
+            </a>
+
+            <button id="logoutBtn">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Logout
+            </button>
+
+        </nav>
+
+    </aside>
+
+    <!-- MAIN CONTENT -->
+
+    <main class="main-content">
+
+        <!-- TOPBAR -->
+
+        <header class="topbar">
+
+            <div>
+                <h1>Track Your Wellness</h1>
+                <p>Log moods, symptoms, and cycle details.</p>
+            </div>
+
+        </header>
+
+        <!-- TRACKER FORM -->
+
+        <section class="tracker-section">
+
+            <div class="tracker-card">
+
+                <h2>Daily Wellness Tracker</h2>
+
+                <form id="trackerForm">
+
+                    <!-- DATE -->
+
+                    <div class="form-group">
+
+                        <label>Select Date</label>
+
+                        <input type="date"
+                            id="trackDate"
+                            required>
+
+                    </div>
+
+                    <!-- MOOD -->
+
+                    <div class="form-group">
+
+                        <label>Select Mood</label>
+
+                        <div class="mood-grid">
+
+                            <button type="button"
+                                class="mood-btn"
+                                data-mood="Happy">
+
+                                😊
+                                <span>Happy</span>
+
+                            </button>
+
+                            <button type="button"
+                                class="mood-btn"
+                                data-mood="Sad">
+
+                                😔
+                                <span>Sad</span>
+
+                            </button>
+
+                            <button type="button"
+                                class="mood-btn"
+                                data-mood="Relaxed">
+
+                                😌
+                                <span>Relaxed</span>
+
+                            </button>
+
+                            <button type="button"
+                                class="mood-btn"
+                                data-mood="Tired">
+
+                                😴
+                                <span>Tired</span>
+
+                            </button>
+
+                            <button type="button"
+                                class="mood-btn"
+                                data-mood="Angry">
+
+                                😡
+                                <span>Angry</span>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <!-- SYMPTOMS -->
+
+                    <div class="form-group">
+
+                        <label>Symptoms</label>
+
+                        <div class="symptom-grid">
+
+                            <label class="symptom-item">
+
+                                <input type="checkbox"
+                                    value="Cramps">
+
+                                <span>Cramps</span>
+
+                            </label>
+
+                            <label class="symptom-item">
+
+                                <input type="checkbox"
+                                    value="Headache">
+
+                                <span>Headache</span>
+
+                            </label>
+
+                            <label class="symptom-item">
+
+                                <input type="checkbox"
+                                    value="Fatigue">
+
+                                <span>Fatigue</span>
+
+                            </label>
+
+                            <label class="symptom-item">
+
+                                <input type="checkbox"
+                                    value="Acne">
+
+                                <span>Acne</span>
+
+                            </label>
+
+                            <label class="symptom-item">
+
+                                <input type="checkbox"
+                                    value="Mood Swings">
+
+                                <span>Mood Swings</span>
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+                    <!-- FLOW LEVEL -->
+
+                    <div class="form-group">
+
+                        <label>Flow Level</label>
+
+                        <select id="flowLevel">
+
+                            <option value="">Select Flow</option>
+
+                            <option value="Light">Light</option>
+
+                            <option value="Medium">Medium</option>
+
+                            <option value="Heavy">Heavy</option>
+
+                        </select>
+
+                    </div>
+
+                    <!-- ENERGY LEVEL -->
+
+                    <div class="form-group">
+
+                        <label>Energy Level</label>
+
+                        <select id="energyLevel">
+
+                            <option value="">Select Energy</option>
+
+                            <option value="Low">Low</option>
+
+                            <option value="Normal">Normal</option>
+
+                            <option value="High">High</option>
+
+                        </select>
+
+                    </div>
+
+                    <!-- NOTES -->
+
+                    <div class="form-group">
+
+                        <label>Daily Notes</label>
+
+                        <textarea id="dailyNotes"
+                            rows="5"
+                            placeholder="Write about your wellness today..."></textarea>
+
+                    </div>
+
+                    <!-- PERIOD START -->
+
+                    <div class="form-group">
+
+                        <label>Is this your period start date?</label>
+
+                        <div class="radio-group">
+
+                            <label>
+
+                                <input type="radio"
+                                    name="periodStart"
+                                    value="yes">
+
+                                Yes
+
+                            </label>
+
+                            <label>
+
+                                <input type="radio"
+                                    name="periodStart"
+                                    value="no"
+                                    checked>
+
+                                No
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+                    <!-- BUTTON -->
+
+                    <button type="submit"
+                        class="save-btn">
+
+                        Save Wellness Record
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+        <!-- RECENT TRACKS -->
+
+        <section class="recent-tracks">
+
+            <div class="section-header">
+
+                <h2>Recent Logs</h2>
+
+            </div>
+
+            <div id="recentLogsContainer"
+                class="recent-logs-container">
+
+                <!-- Dynamic Logs -->
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- JAVASCRIPT FILES -->
+
+    <script src="js/storage.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/tracker.js"></script>
+
+</body>
+
+</html>

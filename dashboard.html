@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Dashboard | Period Tracker</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <i class="fa-solid fa-heart-circle-bolt"></i>
+            <span>Period Tracker</span>
+        </div>
+
+        <nav class="sidebar-menu">
+
+            <a href="dashboard.html" class="active">
+                <i class="fa-solid fa-table-columns"></i>
+                Dashboard
+            </a>
+
+            <a href="tracker.html">
+                <i class="fa-solid fa-calendar-check"></i>
+                Track Cycle
+            </a>
+
+            <a href="calendar.html">
+                <i class="fa-solid fa-calendar-days"></i>
+                Calendar
+            </a>
+
+            <a href="insights.html">
+                <i class="fa-solid fa-chart-line"></i>
+                Insights
+            </a>
+
+            <a href="settings.html">
+                <i class="fa-solid fa-gear"></i>
+                Settings
+            </a>
+
+            <button id="logoutBtn" class="logout-btn">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Logout
+            </button>
+
+        </nav>
+
+    </aside>
+
+    <!-- 
+         MAIN CONTENT
+    = -->
+
+    <main class="main-content">
+
+        <!-- TOP BAR -->
+
+        <header class="topbar">
+
+            <div>
+                <h1 id="welcomeMessage">Welcome Back</h1>
+                <p>Track your wellness journey smoothly.</p>
+            </div>
+
+            <div class="profile-box">
+                <i class="fa-solid fa-user"></i>
+            </div>
+
+        </header>
+
+        <!-- 
+             DASHBOARD GRID
+        = -->
+
+        <section class="dashboard-grid">
+
+            <!-- CARD 1 -->
+
+            <div class="dashboard-card gradient-card">
+
+                <div class="card-header">
+                    <h3>Next Period</h3>
+                    <i class="fa-solid fa-droplet"></i>
+                </div>
+
+                <h2 id="nextPeriodDate">--</h2>
+
+                <p>Predicted upcoming cycle date</p>
+
+            </div>
+
+            <!-- CARD 2 -->
+
+            <div class="dashboard-card">
+
+                <div class="card-header">
+                    <h3>Cycle Length</h3>
+                    <i class="fa-solid fa-rotate"></i>
+                </div>
+
+                <h2 id="cycleLengthDisplay">28 Days</h2>
+
+                <p>Average menstrual cycle</p>
+
+            </div>
+
+            <!-- CARD 3 -->
+
+            <div class="dashboard-card">
+
+                <div class="card-header">
+                    <h3>Ovulation Day</h3>
+                    <i class="fa-solid fa-seedling"></i>
+                </div>
+
+                <h2 id="ovulationDate">--</h2>
+
+                <p>Estimated fertile period</p>
+
+            </div>
+
+            <!-- CARD 4 -->
+
+            <div class="dashboard-card">
+
+                <div class="card-header">
+                    <h3>Current Mood</h3>
+                    <i class="fa-solid fa-face-smile"></i>
+                </div>
+
+                <h2 id="currentMood">Relaxed</h2>
+
+                <p>Your latest wellness mood</p>
+
+            </div>
+
+        </section>
+
+        <!-- 
+             QUICK ACTIONS
+        = -->
+
+        <section class="quick-actions">
+
+            <h2>Quick Actions</h2>
+
+            <div class="action-grid">
+
+                <a href="tracker.html" class="action-card">
+                    <i class="fa-solid fa-pen"></i>
+                    <span>Log Symptoms</span>
+                </a>
+
+                <a href="calendar.html" class="action-card">
+                    <i class="fa-solid fa-calendar"></i>
+                    <span>View Calendar</span>
+                </a>
+
+                <a href="insights.html" class="action-card">
+                    <i class="fa-solid fa-chart-pie"></i>
+                    <span>Check Insights</span>
+                </a>
+
+                <a href="settings.html" class="action-card">
+                    <i class="fa-solid fa-sliders"></i>
+                    <span>Personalize</span>
+                </a>
+
+            </div>
+
+        </section>
+
+        <!-- 
+             WELLNESS TIPS
+        = -->
+
+        <section class="wellness-section">
+
+            <div class="wellness-card">
+
+                <h2>Daily Wellness Tip</h2>
+
+                <p id="wellnessTip">
+                    Stay hydrated and maintain healthy sleep patterns
+                    for better cycle balance and overall wellness.
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- 
+             RECENT ACTIVITY
+        = -->
+
+        <section class="activity-section">
+
+            <div class="section-header">
+                <h2>Recent Activity</h2>
+            </div>
+
+            <div id="activityContainer" class="activity-container">
+
+                <div class="activity-item">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <div>
+                        <h4>No activity available</h4>
+                        <p>Start tracking your wellness today.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- 
+         JAVASCRIPT FILES
+    = -->
+
+    <script src="js/storage.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/dashboard.js"></script>
+    
+
+</body>
+
+</html>

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Register | Period Tracker</title>
+
+    <!-- GLOBAL CSS -->
+    <link rel="stylesheet"
+        href="css/global.css">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- AUTH CONTAINER -->
+
+    <div class="auth-container">
+
+        <!-- REGISTER CARD -->
+
+        <div class="auth-card">
+
+            <!-- TITLE -->
+
+            <div class="auth-title">
+
+                <h1>Create Account 🌸</h1>
+
+                <p>
+                    Start tracking your wellness journey
+                </p>
+
+            </div>
+
+            <!-- REGISTER FORM -->
+
+            <form id="registerForm">
+
+                <!-- FULL NAME -->
+
+                <div class="input-group">
+
+                    <label for="name">
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Enter your full name"
+                        required
+                    >
+
+                </div>
+
+                <!-- EMAIL -->
+
+                <div class="input-group">
+
+                    <label for="email">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Enter your email"
+                        required
+                    >
+
+                </div>
+
+                <!-- AGE -->
+
+                <div class="input-group">
+
+                    <label for="age">
+                        Age
+                    </label>
+
+                    <input
+                        type="number"
+                        id="age"
+                        placeholder="Enter your age"
+                        required
+                    >
+
+                </div>
+
+                <!-- CYCLE LENGTH -->
+
+                <div class="input-group">
+
+                    <label for="cycleLength">
+                        Average Cycle Length
+                    </label>
+
+                    <input
+                        type="number"
+                        id="cycleLength"
+                        placeholder="Example: 28"
+                        required
+                    >
+
+                </div>
+
+                <!-- PASSWORD -->
+
+                <div class="input-group">
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <div class="password-wrapper">
+
+                        <input
+                            type="password"
+                            id="password"
+                            placeholder="Enter password"
+                            required
+                        >
+
+                        <i
+                            class="fa-solid fa-eye"
+                            id="togglePassword"
+                        ></i>
+
+                    </div>
+
+                </div>
+
+                <!-- CONFIRM PASSWORD -->
+
+                <div class="input-group">
+
+                    <label for="confirmPassword">
+                        Confirm Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="confirmPassword"
+                        placeholder="Confirm password"
+                        required
+                    >
+
+                </div>
+
+                <!-- REGISTER BUTTON -->
+
+                <button
+                    type="submit"
+                    class="btn btn-primary"
+                >
+
+                    Register
+
+                </button>
+
+            </form>
+
+            <!-- LOGIN LINK -->
+
+            <div class="text-center mt-20">
+
+                <p>
+
+                    Already have an account?
+
+                    <a href="index.html">
+
+                        Login
+
+                    </a>
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- JAVASCRIPT -->
+
+    <script src="js/storage.js"></script>
+
+    <script src="js/utils.js"></script>
+
+    <script src="js/auth.js"></script>
+
+    <!-- PASSWORD TOGGLE -->
+
+    <script>
+
+        const togglePassword =
+            document.getElementById(
+                "togglePassword"
+            );
+
+        const passwordInput =
+            document.getElementById(
+                "password"
+            );
+
+        togglePassword.addEventListener(
+            "click",
+            () => {
+
+                if (
+                    passwordInput.type ===
+                    "password"
+                ) {
+
+                    passwordInput.type = "text";
+
+                    togglePassword.classList.replace(
+                        "fa-eye",
+                        "fa-eye-slash"
+                    );
+
+                } else {
+
+                    passwordInput.type = "password";
+
+                    togglePassword.classList.replace(
+                        "fa-eye-slash",
+                        "fa-eye"
+                    );
+                }
+            }
+        );
+
+    </script>
+
+</body>
+
+</html>
